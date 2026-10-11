@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Karnigaasree V | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f4ff;
+            color: #292454;
+        }
+
+        /* Navigation */
+        nav {
+            background: #292454;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav h2 {
+            color: #ffc7e1;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #ffc7e1;
+        }
+
+        /* Home */
+        header {
+            background: linear-gradient(
+                120deg, #fbd5e5, #fff1e6, #e2d7ff
+            );
+            padding: 65px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 45px;
+            flex-wrap: wrap;
+        }
+
+        .profile-photo {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 7px solid white;
+            box-shadow: 0 5px 20px #c8b3d9;
+        }
+
+        .intro h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .intro h3 {
+            color: #7654a8;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            line-height: 1.8;
+        }
+
+        /* LinkedIn Logo */
+        .linkedin-logo {
+            width: 38px;
+            height: 38px;
+            margin-top: 18px;
+            background: white;
+            padding: 5px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .linkedin-logo:hover {
+            transform: scale(1.15);
+        }
+
+        /* Common Sections */
+        section {
+            padding: 50px 8%;
+        }
+
+        section h2 {
+            color: #7654a8;
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        /* About */
+        #about {
+            background: #f8f4ff;
+        }
+
+        .about-box {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            border-left: 6px solid #d88bb7;
+            box-shadow: 0 4px 15px #e4d9ed;
+            line-height: 1.9;
+        }
+
+        /* Career Objective */
+        #objective {
+            background: #fff1e6;
+        }
+
+        .objective-box {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            line-height: 1.9;
+            box-shadow: 0 4px 12px #eadfd8;
+        }
+
+        /* Education */
+        #education {
+            background: #fff0f5;
+        }
+
+        .education-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .education-card {
+            flex: 1 1 240px;
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            border-bottom: 5px solid #d88bb7;
+            box-shadow: 0 4px 12px #ead5e3;
+            transition: transform 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-card h3 {
+            color: #7654a8;
+            margin-bottom: 12px;
+        }
+
+        .education-card p {
+            line-height: 1.7;
+        }
+
+        /* Skills */
+        #skills {
+            background: #f0efff;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill {
+            padding: 14px 24px;
+            border-radius: 30px;
+            background: #fbd5e5;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .skill:nth-child(2) {
+            background: #ded4ff;
+        }
+
+        .skill:nth-child(3) {
+            background: #d1f1e8;
+        }
+
+        .skill:nth-child(4) {
+            background: #ffe4c9;
+        }
+
+        .skill:hover {
+            transform: scale(1.08);
+        }
+
+        /* Courses and Certifications */
+        #courses {
+            background: #f8f4ff;
+        }
+
+        .course-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 18px;
+            border-radius: 16px;
+            border-left: 5px solid #a88bd5;
+            box-shadow: 0 4px 12px #e4d9ed;
+        }
+
+        .course-card h3 {
+            color: #7654a8;
+            margin-bottom: 10px;
+        }
+
+        .course-card p {
+            line-height: 1.7;
+        }
+
+        /* Currently Learning */
+        #learning {
+            background: #eaf8f2;
+        }
+
+        .learning-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .learning-item {
+            background: white;
+            padding: 18px 24px;
+            border-radius: 14px;
+            border: 1px solid #c6e8d8;
+            box-shadow: 0 3px 10px #d7ebe2;
+        }
+
+        /* Contact */
+        #contact {
+            background: #fff1e6;
+            text-align: center;
+        }
+
+        #contact p {
+            margin-bottom: 18px;
+            line-height: 1.8;
+        }
+
+        .email-link {
+            display: inline-block;
+            color: #7654a8;
+            background: white;
+            text-decoration: none;
+            padding: 13px 22px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #ead5e3;
+            overflow-wrap: anywhere;
+        }
+
+        .email-link:hover {
+            background: #fbd5e5;
+        }
+
+        /* Footer */
+        footer {
+            background: #292454;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer span {
+            color: #ffc7e1;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            nav {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            header {
+                text-align: center;
+            }
+
+            .intro h1 {
+                font-size: 29px;
+            }
+
+            section {
+                padding: 40px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <h2>♡ KARNIGAASREE V</h2>
+
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#objective">Objective</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#courses">Courses</a>
+            <a href="#learning">Learning</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Home -->
+    <header id="home">
+
+        <img src="myphoto.jpg"
+             alt="Karnigaasree V"
+             class="profile-photo">
+
+        <div class="intro">
+            <h1>KARNIGAASREE V</h1>
+
+            <h3>Computer Science Engineering Student</h3>
+
+            <p>Code ✦ Learn ✦ Grow</p>
+            <p>Enthusiastic Fresher | Aspiring Developer</p>
+
+            <a href="https://www.linkedin.com/in/karnigaa-sree-v-9b8067433/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Visit my LinkedIn profile">
+
+                <img
+                    src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+                    alt="LinkedIn Logo"
+                    class="linkedin-logo">
+            </a>
+        </div>
+
+    </header>
+
+    <!-- About Me -->
+    <section id="about">
+
+        <h2>About Me ♡</h2>
+
+        <div class="about-box">
+            <p>
+                I am a Computer Science Engineering student interested
+                in coding and learning new technologies. I have completed
+                two online courses to improve my technical knowledge.
+                I enjoy learning new programming concepts and continuously
+                working to improve my technical skills.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Career Objective -->
+    <section id="objective">
+
+        <h2>Career Objective 🎯</h2>
+
+        <div class="objective-box">
+            <p>
+                A motivated Computer Science Engineering student eager
+                to apply programming knowledge, learn new technologies,
+                and gain practical experience. I aim to improve my
+                problem-solving abilities and contribute to meaningful
+                projects while growing as a software professional.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+
+        <h2>My Education 🎓</h2>
+
+        <div class="education-container">
+
+            <div class="education-card">
+                <h3>Bachelor of Computer Science Engineering</h3>
+                <p>M. Kumarasamy College of Engineering, Karur</p>
+                <p>Currently Pursuing</p>
+            </div>
+
+            <div class="education-card">
+                <h3>HSLC</h3>
+                <p>Vivekanandha Vidyalaya Matric Higher Secondary School</p>
+                <p>Muthur - 638105</p>
+            </div>
+
+            <div class="education-card">
+                <h3>SSLC</h3>
+                <p>Vivekanandha Vidyalaya Matric Higher Secondary School</p>
+                <p>Muthur - 638105</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Technical Skills -->
+    <section id="skills">
+
+        <h2>My Technical Skills ✨</h2>
+
+        <div class="skills-container">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">Python</div>
+            <div class="skill">C Programming</div>
+        </div>
+
+    </section>
+
+    <!-- Courses and Certifications -->
+    <section id="courses">
+
+        <h2>Courses & Certifications 📜</h2>
+
+        <div class="course-card">
+            <h3>Online Course 1</h3>
+            <p>
+                Completed an online course to improve my technical
+                knowledge and learn new concepts.
+            </p>
+            <p><b>Course Name:</b>COMMUNICATION SKILLS</p>
+        </div>
+
+        <div class="course-card">
+            <h3>Online Course 2</h3>
+            <p>
+                Completed another online course to strengthen my
+                understanding of technology and programming.
+            </p>
+            <p><b>Course Name:</b>COMMUNICATION SKILLS</p>
+        </div>
+
+    </section>
+
+    <!-- Currently Learning -->
+    <section id="learning">
+
+        <h2>Currently Learning 📚</h2>
+
+        <div class="learning-container">
+            <div class="learning-item">Web Development</div>
+            <div class="learning-item">Python Programming</div>
+            <div class="learning-item">SQL & Databases</div>
+            <div class="learning-item">Problem Solving</div>
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <h2>Contact Me 💌</h2>
+
+        <p>
+            I am eager to learn, grow, and explore new opportunities.
+            Feel free to contact me through email.
+        </p>
+
+        <a class="email-link"
+           href="mailto:YOUR_EMAIL@gmail.com">
+            ✉karnigaa06@gmail.com
+        </a>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 <span>KARNIGAASREE V</span> | My Portfolio ♡</p>
+    </footer>
+
+</body>
+</html>
+```
